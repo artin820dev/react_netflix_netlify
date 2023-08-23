@@ -1,13 +1,293 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
 body {
+  background-color: #000000;
+  font-family: "Lato", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 62.5%;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* nav bar styles */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: absolute;
+  padding: 1rem 1rem;
+  z-index: 100;
+}
+
+.netflix-logo {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: red;
+
+  cursor: pointer;
+}
+
+.button {
+  font-size: 0.99rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.2rem;
+  color: white;
+  font-weight: 400;
+}
+
+.button--red {
+  background: rgb(218, 5, 5);
+}
+
+/* main Section */
+
+.main {
+  height: 550px;
+  width: 100%;
+  color: white;
+}
+
+.main > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.main__second {
+  position: absolute;
+  top: 24%;
+  left: 4%;
+  display: flex;
+  flex-direction: column;
+
+  gap: 0.5rem;
+}
+
+.main__second > h3 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: white;
+}
+
+.second__child > button {
+  padding: 9px 17px;
+  border: rgb(210, 210, 210) solid 1px;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: rgb(210, 210, 210);
+  color: black;
+}
+
+button.button--second {
+  border: white solid 1px;
+  margin-left: 0.7rem;
+  color: white;
+  background-color: transparent;
+}
+
+.main__second > p {
+  font-weight: 300;
+  font-size: 1rem;
+  color: rgb(27, 27, 27);
+}
+
+p.overview {
+  max-width: 600px;
+  color: rgb(219, 219, 219);
+}
+
+/* row */
+
+.row {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+}
+
+.title {
+  color: white;
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.movie {
+  width: 280px;
+  cursor: pointer;
+  display: inline-block;
+  margin-left: 15px;
+  position: relative;
+}
+
+.movie-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  color: white;
+  opacity: 0;
+}
+
+.movie-inside:hover {
+  opacity: 1;
+  background: rgba(11, 11, 11, 0.6);
+}
+
+.movie-inside > p:nth-child(1) {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.heart {
+  position: absolute;
+  top: 2.9%;
+  left: 2%;
+  font-size: 1.3rem;
+}
+
+.signin-form-1 {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  padding: 6rem;
+}
+
+.signin-form-2 {
+  max-width: 450px;
+  height: 600px;
+  background-color: rgba(0, 0, 0, 0.7);
+  margin: auto;
+  color: white;
+}
+
+.signin-form-3 {
+  padding: 3rem 0;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 320px;
+}
+
+.signin-form-3 > h1 {
+  font-weight: 700;
+  font-size: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 0.99rem;
+}
+
+.signin-form-3 > p {
+  margin-top: 1rem 0;
+  color: rgb(236, 58, 58);
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input {
+  margin: 0.5rem 0;
+  padding: 0.8rem;
+  background-color: rgb(56, 63, 75);
+  border-radius: 0.2rem;
+  font-weight: 400;
+  font-size: 0.97rem;
+}
+
+input[type="submit"] {
+  background-color: #ff0000;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.remember-me-label {
+  display: flex;
+  align-items: center;
+  gap: 0.39rem;
+}
+
+.label-text {
+  font-size: 0.99rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(77, 87, 105);
+}
+
+label ~ p {
+  font-size: 0.99rem;
+  font-weight: 300;
+  margin-bottom: 0.2rem;
+}
+
+/* mobile sizes */
+
+@media screen and (max-width: 768px) {
+  .title {
+    color: white;
+    padding: 1rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+  .movie {
+    width: 240px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .movie {
+    width: 200px;
+  }
+  .signin-form-1 {
+    padding: 6rem 0;
+  }
+}
+
+@media screen and (max-width: 390px) {
+  .navbar-container {
+    padding: 0.3rem 0.5rem;
+  }
+  .button {
+    font-size: 0.7rem;
+    border: none;
+    padding: 0.3rem 1.1rem;
+    border-radius: 0.2rem;
+    color: white;
+    font-weight: 400;
+  }
+
+  .netflix-logo {
+    font-size: 1.8rem;
+  }
+
+  form > div {
+    padding: 0 1rem 0 0;
+  }
+
+  .signin-form-3 {
+    margin: 0 auto;
+    width: 80%;
+  }
+
+  .signin-form-3 > p {
+    font-size: 0.9rem;
+  }
+  .movie {
+    width: 140px;
+  }
 }
